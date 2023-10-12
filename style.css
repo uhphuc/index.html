@@ -1,5 +1,225 @@
-.h1 {
-  background-color: blue;
-  color: black;
-  font-family: arial;
+*{
+    margin:0;
+    padding:0;
+}
+
+.Hi_Guys{
+    border-style:groove;
+    border-radius: 30px 30px 100px 30px;
+    border-color:aqua;
+    text-align:center;
+    padding-bottom: 30px;
+}
+
+/*MENU TASKBAR*/
+
+.menu_taskbar{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    box-sizing:border-box;
+    padding-top:5px;
+    padding-bottom:5px;
+    font-family:'Poppins', sans-serif;
+}
+.menu_manage{
+    position: relative;
+    width:700px;
+    height:50px;
+    background-color:aliceblue;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius: 10px;
+}
+.menu_manage ul{
+    display: flex;
+    width:300px;
+}
+.menu_manage ul li{
+    list-style:none;
+    position:relative;
+    /*700/4 = 175*/
+    width:175px;
+    height:50px;
+    z-index: 2;
+}
+.menu_manage ul li a{
+    position: relative;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    width:100%;
+    text-align: center;
+    font-weight: 500;
+}
+.menu_manage ul li a .icon{
+    position: relative;
+    display: block;
+    line-height: 60px;
+    font-size: 1.5em;
+    transition:0.5s;
+    color:#222327;
+}
+.menu_manage ul li.active a .icon{
+    transform: translateY(-35px);
+    color:rgb(38, 57, 73);
+}
+.menu_manage ul li a .text{
+    position: absolute;
+    background:rgb(40, 110, 110);
+    color:#fff;
+    padding: 2px 7px;
+    border-radius:10px;
+    font-weight:400;
+    font-size:0.75em;
+    letter-spacing: 0.05em;
+    transition:0.5s;
+    opacity: 0;
+    transform: translateY(15px);
+}
+.menu_manage ul li.active a .text {
+    transform: translateY(-4px);
+    opacity:1;
+}
+.indicator{
+    position: absolute;
+    top: -35px;
+    width: 70px;
+    height: 70px;
+    background:aliceblue;
+    border-radius:50%;
+    z-index:1;
+    transition:0.5s;
+}
+.indicator::before{
+    content:'';
+    position: absolute;
+    top:5px;
+    left:-28px;
+    width:30px;
+    height:30px;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: 15px 18px aliceblue;
+}
+
+.indicator::after{
+    content:'';
+    position: absolute;
+    top:5px;
+    right:-28px;
+    width:30px;
+    height:30px;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: -15px 18px aliceblue;
+}
+.menu_manage ul li:nth-child(1).active ~ .indicator{
+    transform: translateX(calc(75px * 0));
+}
+.menu_manage ul li:nth-child(2).active ~ .indicator{
+    transform: translateX(calc(75px * 1));
+}
+.menu_manage ul li:nth-child(3).active ~ .indicator{
+    transform: translateX(calc(75px * 2));
+}
+.menu_manage ul li:nth-child(4).active ~ .indicator{
+    transform: translateX(calc(75px * 3));
+}
+/*END OF THE HEADER */
+
+/*----------------------------------------------------------------------------------------------------------------------*/
+
+/*BEGIN THE BODY*/
+.photo{
+    line-height:30px;
+    background-color:none;
+    height:55px;
+    width:55px;
+    float:left;
+    padding-top:5px
+}
+.title{
+    padding-top:10px;
+    padding-bottom: 30px;
+    justify-content:space-between;
+    text-align:center;
+    color:white;
+    font-family:'poppins', sans-serif;
+}
+/*Button: CONTACT ME VIA*/
+.contact-button{
+    width:150px;
+    
+}
+.navigation-menu{
+    line-height:30px;
+    background-color:none;
+    height:500px;
+    width:150px;
+    float:left;
+    padding:5px
+}
+.contact-via{
+    background-color:aqua;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border: none;
+    width:150px;
+    height:45px;
+    padding:10px;
+    font-size:14px;
+    cursor:pointer;
+
+    transition-property: transform;
+    transition-duration: 0.3s;
+    transition-timing-function:ease;
+    transition-delay:0s;
+}
+.contact-via:hover{
+    transform: translateY(-8px);
+    background-color:rgb(50,50,50);
+    color:white;
+}
+.all-contact{
+    display:none;
+    background-color:#fff;
+    min-width:none;
+}
+.all-contact a{
+    color: black;
+    padding: 10px;
+    text-decoration:none;
+    display: block;
+    text-align:left;
+
+    transition: transform 0.3s;
+}
+.all-contact a.facebook:hover{
+    background-color: rgb(48, 48, 194);
+    color: white;
+
+    transform: translateX(8px);
+}
+.all-contact a.tiktok:hover{
+    background-color:black;
+    color:white;
+
+    transform: translateX(8px);
+}
+.all-contact a.ins:hover{
+    background-color:rgb(245, 105, 94);
+    color: white;
+
+    transform: translateX(8px);
+}
+.all-contact a.gmail:hover{
+    background-color:rgb(248, 59, 59);
+    color: white;
+
+    transform: translateX(8px);
+}
+.contact-button:hover .all-contact{
+    display:block;
 }
